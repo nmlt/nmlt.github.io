@@ -15,34 +15,7 @@
     <script src=" https://cdn.jsdelivr.net/npm/intro.js@7.0.1/intro.min.js "></script>
     <link href=" https://cdn.jsdelivr.net/npm/intro.js@7.0.1/minified/introjs.min.css " rel="stylesheet">
   
-<link rel="preload" href="/frontend-9997941be9c03732_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/frontend-9997941be9c03732.js"></head>
+<link rel="preload" href="/frontend-e182d44c158c873d_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/frontend-e182d44c158c873d.js"></head>
 <body>
-<script type="module">import init from '/frontend-9997941be9c03732.js';init('/frontend-9997941be9c03732_bg.wasm');</script><script>(function () {
-    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    var url = protocol + '//' + window.location.host + '/_trunk/ws';
-    var poll_interval = 5000;
-    var reload_upon_connect = () => {
-        window.setTimeout(
-            () => {
-                // when we successfully reconnect, we'll force a
-                // reload (since we presumably lost connection to
-                // trunk due to it being killed, so it will have
-                // rebuilt on restart)
-                var ws = new WebSocket(url);
-                ws.onopen = () => window.location.reload();
-                ws.onclose = reload_upon_connect;
-            },
-            poll_interval);
-    };
-
-    var ws = new WebSocket(url);
-    ws.onmessage = (ev) => {
-        const msg = JSON.parse(ev.data);
-        if (msg.reload) {
-            window.location.reload();
-        }
-    };
-    ws.onclose = reload_upon_connect;
-})()
-</script></body></html>
+<script type="module">import init from '/frontend-e182d44c158c873d.js';init('/frontend-e182d44c158c873d_bg.wasm');</script></body></html>
